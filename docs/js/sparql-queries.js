@@ -61,3 +61,17 @@ SELECT DISTINCT * WHERE {
     `
     return sparql_query;
 }
+
+function getSPARQL004()
+{
+    var sparql_query = `
+PREFIX l4a-fin: <http://lod4all.net/ontology/financial/>
+
+SELECT ?county (xsd:decimal(count(?branch)) as ?num_of_branches) where
+{
+  <%URI%> l4a-fin:branch ?branch.
+  ?branch l4a-fin:county ?county.
+} group by ?county order by desc(?num_of_branches)
+    `
+    return sparql_query;
+}
