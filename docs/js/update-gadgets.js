@@ -13,6 +13,7 @@ function updateGadgets(click_uri)
     updateGadget001(click_uri);
     updateGadget002(click_uri);
     updateGadget003(click_uri);
+    updateGadget004(click_uri);
 }
 
 function updateGadget001(click_uri)
@@ -30,7 +31,7 @@ function updateGadget004(click_uri)
     sparql_val = sparql_val.replace(/<%URI%>/g, '<'+click_uri+'>');
     var Q = new sgvizler.Query();
     Q.query(sparql_val)
-       .endpointURL("https://lod4all.net/api/sparql")
+       .endpointURL("https://lod4all.net/api/sparql?token=jist2018-data")
        .endpointOutputFormat("json")
        .chartFunction("google.visualization.PieChart")
        .draw("gadget-004");
