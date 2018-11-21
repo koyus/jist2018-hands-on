@@ -39,7 +39,7 @@ function updateGadget002(click_uri)
     Q.query(sparql_val)
        .endpointURL("https://lod4all.net/api/sparql")
        .endpointOutputFormat("json")
-       .chartFunction("google.visualization.LineChart")
+       .chartFunction("google.visualization.AreaChart")
        .draw("gadget-002");
 }
 
